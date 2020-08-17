@@ -1,9 +1,9 @@
 CFLAGS = -g -O2 -shared -fPIC -Wall -pedantic
 LDFLAGS = -lSoundTouch
 
-all: app_voicechanger.so
+all: app_cenvoicechanger.so
 
-app_voicechanger.so: app_voicechanger.o voicechanger.o
+app_cenvoicechanger.so: app_voicechanger.o voicechanger.o
 	g++ $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 app_voicechanger.o: app_voicechanger.c
