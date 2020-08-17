@@ -23,7 +23,9 @@ void *vc_soundtouch_create(int rate, float pitch)
         st->setSampleRate(rate);
         st->setPitchSemiTones(pitch);
         st->setSetting(SETTING_USE_QUICKSEEK, 1);
-        st->setSetting(SETTING_USE_AA_FILTER, 1);
+        st->setSetting(SETTING_SEQUENCE_MS, 40);
+        st->setSetting(SETTING_SEEKWINDOW_MS, 15);
+        st->setSetting(SETTING_OVERLAP_MS, 8);
     }
     return st;
 }

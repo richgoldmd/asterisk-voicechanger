@@ -7,6 +7,7 @@
  * This program is free software, distributed under the terms of the GNU
  * General Public License version 2.0 or later.
  *
+ Modified by RG for CEN
  */
 
 #define AST_MODULE "app_voicechanger"
@@ -34,17 +35,17 @@ struct voicechanger {
     struct ast_audiohook ah[1];
 };
 
-static const char *app = "VoiceChanger";
+static const char *app = "CENVoiceChanger";
 static const char *synopsis = "Adjusts the pitch of your voice";
 static const char *desc = ""
-    "  VoiceChanger(<pitch>)\n\n"
+    "  CENVoiceChanger(<pitch>)\n\n"
     "Specify a pitch in semitones.  Like -5 for deeper and 5 for higher.\n"
     "";
 
-static const char *stop_app = "StopVoiceChanger";
+static const char *stop_app = "StopCENVoiceChanger";
 static const char *stop_synopsis = "Removes voice changer";
 static const char *stop_desc = ""
-    "  StopVoiceChanger()\n\n"
+    "  StopCENVoiceChanger()\n\n"
     "Removes the voice change effect from a channel, if there is any.\n"
     "";
 
@@ -165,7 +166,7 @@ static int voicechanger_exec(struct ast_channel *chan, const char *data)
     struct ast_module_user *u;
     float pitch;
     if (ast_strlen_zero(data)) {
-        ast_log(LOG_WARNING, "voicechanger() missing argument\n");
+        ast_log(LOG_WARNING, "cenvoicechanger() missing argument\n");
         return -1;
     }
     pitch = strtof(data, NULL);
@@ -220,7 +221,7 @@ static int load_module(void)
     return res;
 }
 
-AST_MODULE_INFO_STANDARD(ASTERISK_GPL_KEY, "Voice Changer");
+AST_MODULE_INFO_STANDARD(ASTERISK_GPL_KEY, "CEN Voice Changer");
 
 /* For Emacs:
  * Local Variables:
