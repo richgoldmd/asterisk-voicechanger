@@ -10,7 +10,7 @@
  Modified by RG for CEN
  */
 
-#define AST_MODULE "app_voicechanger"
+#define AST_MODULE "app_cenvoicechanger"
 
 #include <asterisk.h>
 #include <asterisk/file.h>
