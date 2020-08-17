@@ -6,7 +6,7 @@ all: app_cenvoicechanger.so
 app_cenvoicechanger.so: app_cenvoicechanger.o voicechanger.o
 	g++ $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-app_cenvoicechanger.o: app_voicechanger.c
+app_cenvoicechanger.o: app_cenvoicechanger.c
 	gcc $(CFLAGS) --std=gnu99 -c -o $@ $<
 
 voicechanger.o: voicechanger.cpp
